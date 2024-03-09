@@ -9,9 +9,9 @@ void i18n
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
-    debug: false,
-    fallbackLng: "pt",
-    supportedLngs: ["pt", "en"],
+    debug: true,
+    fallbackLng: "en",
+    supportedLngs: ["en", "fr", "pt"],
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },

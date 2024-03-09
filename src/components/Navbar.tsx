@@ -14,11 +14,30 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 
+import enFlag from "../Assets/en-flag.svg";
+import frFlag from "../Assets/fr-flag.svg";
+import ptFlag from "../Assets/pt-flag.svg";
+
+import i18n from "../i18n";
+
 import { CgFileDocument } from "react-icons/cg";
+import { ButtonGroup, Dropdown } from "react-bootstrap";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+
+  const getLanguageFlag = (currentLanguage: string) => {
+    return currentLanguage === "en"
+      ? enFlag
+      : i18n.language === "fr"
+      ? frFlag
+      : ptFlag;
+  };
+
+  const [currentFlag, setCurrentFlag] = useState(
+    getLanguageFlag(i18n.language)
+  );
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -29,6 +48,12 @@ function NavBar() {
   }
 
   window.addEventListener("scroll", scrollHandler);
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+
+    setCurrentFlag(getLanguageFlag(lng));
+  };
 
   return (
     <Navbar
@@ -44,7 +69,7 @@ function NavBar() {
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
-            updateExpanded(expand ? false : "expanded");
+            updateExpanded(expand ? false : true);
           }}
         >
           <span></span>
@@ -102,15 +127,46 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
+            <Nav.Item
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Dropdown>
+                <Dropdown.Toggle
+                  id="dropdown-basic"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    height: "33px",
+                  }}
+                >
+                  <img src={currentFlag} alt="Current Language" height="20" />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => changeLanguage("en")}
+                    style={{ height: "33px" }}
+                  >
+                    <img src={enFlag} alt="UK Flag" height="20" /> English
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => changeLanguage("fr")}
+                    style={{ height: "33px" }}
+                  >
+                    <img src={frFlag} alt="FR Flag" height="20" /> Français
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => changeLanguage("pt")}
+                    style={{ height: "33px" }}
+                  >
+                    <img src={ptFlag} alt="PT Flag" height="20" /> Português
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

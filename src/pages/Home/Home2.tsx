@@ -23,32 +23,63 @@ function Home2() {
             <p className="home-about-body">
               <Trans t={t} i18nKey="love_programming" />
               <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="text-color"> C++, Javascript and Go. </b>
-              </i>
+              <br />
+              <Trans
+                t={t}
+                i18nKey="most_fluent_techs"
+                components={{
+                  span: <span className="text-color" />,
+                }}
+              />
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="text-color">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="text-color">Blockchain.</b>
-              </i>
+              <Trans t={t} i18nKey="interest_list_title" />
+              <br />
+              <ul>
+                <li>
+                  <Trans
+                    t={t}
+                    i18nKey="interest_list_items.0"
+                    components={{
+                      span: <span className="text-color" />,
+                    }}
+                  />
+                </li>
+                <li>
+                  <Trans
+                    t={t}
+                    i18nKey="interest_list_items.1"
+                    components={{
+                      span: <span className="text-color" />,
+                    }}
+                  />
+                </li>
+                <li>
+                  <Trans
+                    t={t}
+                    i18nKey="interest_list_items.2"
+                    components={{
+                      span: <span className="text-color" />,
+                    }}
+                  />
+                </li>
+              </ul>
+              <Trans
+                t={t}
+                i18nKey="extra_knowledge"
+                components={{
+                  span: <span className="text-color" />,
+                }}
+              />
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="text-color">Node.js</b> and
-              <i>
-                <b className="text-color">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="text-color"> React.js and Next.js</b>
-              </i>
+              <Trans
+                t={t}
+                i18nKey="hoobies"
+                components={{
+                  span: <span className="text-color" />,
+                }}
+              />
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -59,9 +90,19 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>
+              <Trans
+                i18nKey="find_me_on"
+                t={t}
+                components={{ span: <span className="uppercase-text" /> }}
+              />
+            </h1>
             <p>
-              Feel free to <span className="text-color">connect </span>with me
+              <Trans
+                i18nKey="connect_with_me"
+                t={t}
+                components={{ span: <span className="text-color" /> }}
+              />
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

@@ -23,6 +23,10 @@ html {
   --imp-text-color: var(--text-color);
 }
 
+.uppercase-text {
+  text-transform: uppercase;
+}
+
 .text-color {
   color: var(--imp-text-color) !important;
 }

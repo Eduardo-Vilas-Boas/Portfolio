@@ -1,9 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../../components/Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 function Home() {
   const { t } = useTranslation(["home"]);
@@ -23,27 +22,22 @@ function Home() {
               </h1>
 
               <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> Eduardo Guerra</strong>
+                <Trans
+                  i18nKey="welcome_message"
+                  t={t}
+                  values={{ name: "Eduardo Guerra" }}
+                  components={{ strong: <strong /> }}
+                />
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
             </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
-            </Col>
           </Row>
         </Container>
+        <Home2 />
       </Container>
-      <Home2 />
     </section>
   );
 }

@@ -1,3 +1,6 @@
 {
-  "hello_there": "Hello there!"
+  "hello_there": "Hello there!",
+  "welcome_message": "I'm <strong>{{name}}</strong>",
+  "introduce_myself": "LET ME <span>INTRODUCE</span> MYSELF",
+  "love_programming": "I fell in love with programming and I have at least learnt something, I think… 🤷‍♂️"
 }

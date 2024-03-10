@@ -1,6 +1,11 @@
 import React from "react";
-function Pre(props) {
-  return <div id={props.load ? "preloader" : "preloader-none"}></div>;
+
+interface PreProps {
+  load: boolean;
 }
+
+const Pre: React.FC<PreProps> = ({ load }) => {
+  return <div id={load ? "preloader" : "preloader-none"}></div>;
+};
 
 export default Pre;

@@ -1,30 +1,22 @@
 import { Col, Row } from "react-bootstrap";
-import {
-  SiVisualstudiocode,
-  SiPostman,
-  SiSlack,
-  SiVercel,
-  SiMacos,
-} from "react-icons/si";
+import { SiVisualstudiocode, SiLinux } from "react-icons/si";
 
 function Toolstack() {
+  const tool_list = [
+    ["Linux", <SiLinux />],
+    ["VS Code", <SiVisualstudiocode />],
+  ];
+
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiMacos />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiSlack />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiVercel />
-      </Col>
+      {tool_list.map((tool) => {
+        return (
+          <Col xs={4} md={2} className="tech-icons">
+            <p style={{ fontSize: "0.4em" }}>{tool[0]}</p>
+            {tool[1]}
+          </Col>
+        );
+      })}
     </Row>
   );
 }

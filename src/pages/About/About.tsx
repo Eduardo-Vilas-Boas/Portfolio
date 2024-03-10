@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../../components/Particle";
-import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
@@ -43,8 +42,6 @@ function About() {
           <strong className="text-color">Tools</strong> I use
         </h1>
         <Toolstack />
-
-        <Github />
       </Container>
     </Container>
   );

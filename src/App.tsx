@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import Projects from "./pages/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./pages/Resume/ResumeNew";
 import {
@@ -30,18 +29,19 @@ function App() {
 
   return (
     <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Suspense fallback={<Preloader load={load} />}>
+        <div className="App" id={load ? "no-scroll" : "scroll"}>
+          <Navbar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Suspense>
     </Router>
   );
 }

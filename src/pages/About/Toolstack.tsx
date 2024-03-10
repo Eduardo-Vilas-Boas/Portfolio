@@ -11,7 +11,7 @@ function Toolstack() {
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {tool_list.map((tool) => {
         return (
-          <Col xs={4} md={2} className="tech-icons">
+          <Col key={tool[0].toString()} xs={4} md={2} className="tech-icons">
             <p style={{ fontSize: "0.4em" }}>{tool[0]}</p>
             {tool[1]}
           </Col>

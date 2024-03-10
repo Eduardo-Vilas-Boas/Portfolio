@@ -41,7 +41,7 @@ function Techstack() {
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {tech_list.map((tech) => {
         return (
-          <Col xs={4} md={2} className="tech-icons">
+          <Col key={tech[0].toString()} xs={4} md={2} className="tech-icons">
             <p style={{ fontSize: "0.4em" }}>{tech[0]}</p>
             {tech[1]}
           </Col>

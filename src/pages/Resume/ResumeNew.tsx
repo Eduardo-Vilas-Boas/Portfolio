@@ -7,9 +7,12 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import { useTranslation } from "react-i18next";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
+  const { t } = useTranslation(["resume"]);
+
   const [width, setWidth] = useState(1200);
 
   useEffect(() => {
@@ -28,7 +31,7 @@ function ResumeNew() {
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
-            &nbsp;Download CV
+            &nbsp;{t("download_cv")}
           </Button>
         </Row>
 

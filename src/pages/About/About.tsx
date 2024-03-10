@@ -39,7 +39,7 @@ function About() {
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="text-color">Tools</strong> I use
+          <strong className="text-color">Tools</strong>
         </h1>
         <Toolstack />
       </Container>

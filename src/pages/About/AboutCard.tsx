@@ -1,40 +1,51 @@
 import Card from "react-bootstrap/Card";
+import { Trans, useTranslation } from "react-i18next";
 import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
+  const { t } = useTranslation(["about"]);
+
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am{" "}
-            <span className="text-color">Soumyajit Behera </span>
-            from <span className="text-color"> Bhubaneswar, India.</span>
+            <Trans
+              t={t}
+              i18nKey="name"
+              components={{
+                span: <span className="text-color" />,
+              }}
+            />
             <br />
-            I am currently employed as a software developer at Juspay.
             <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
+            <Trans
+              t={t}
+              i18nKey="current_employement"
+              values={{ company_name: "Planet Farms" }}
+              components={{
+                a: <a href="https://www.planetfarms.ag" target="_blank" />,
+                span: <span className="text-color" />,
+              }}
+            />
             <br />
             <br />
-            Apart from coding, some other activities that I love to do!
+            <Trans t={t} i18nKey="about_activities_title" />
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight />{" "}
+              <Trans t={t} i18nKey={"about_activities_items.0"} />
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight />{" "}
+              <Trans t={t} i18nKey={"about_activities_items.1"} />
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight />{" "}
+              <Trans t={t} i18nKey={"about_activities_items.2"} />
             </li>
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
         </blockquote>
       </Card.Body>
     </Card>

@@ -1,8 +1,8 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
+import { Trans, useTranslation } from "react-i18next";
 import Particle from "../../components/Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { Trans, useTranslation } from "react-i18next";
 
 function Home() {
   const { t } = useTranslation(["home"]);
@@ -36,8 +36,8 @@ function Home() {
             </Col>
           </Row>
         </Container>
-        <Home2 />
       </Container>
+      <Home2 />
     </section>
   );
 }

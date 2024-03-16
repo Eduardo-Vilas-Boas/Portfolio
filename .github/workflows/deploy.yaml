@@ -23,3 +23,14 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
+          tags: portfolio-app:latest
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Run Docker image
+        run: docker run -d -p 80:80 my-react-app:latest

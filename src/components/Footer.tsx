@@ -50,6 +50,7 @@ function Footer() {
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="icon-colour navbar-social-icons"
               >
                 <AiTwotoneMail />
               </a>

@@ -1,9 +1,9 @@
 import { Container, Row, Col } from "react-bootstrap";
-import homeImage from "../../Assets/home.png";
+import { Trans, useTranslation } from "react-i18next";
 import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiTwotoneMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { Trans, useTranslation } from "react-i18next";
+import homeImage from "../../Assets/home.png";
 
 function Home2() {
   const { t } = useTranslation(["home"]);
@@ -20,7 +20,7 @@ function Home2() {
                 components={{ span: <span className="text-color" /> }}
               />
             </h1>
-            <p className="home-about-body">
+            <div className="home-about-body">
               <Trans t={t} i18nKey="love_programming" />
               <br />
               <br />
@@ -80,7 +80,7 @@ function Home2() {
                   span: <span className="text-color" />,
                 }}
               />
-            </p>
+            </div>
           </Col>
           <Col md={4} className="myAvtar-col">
             <Tilt>

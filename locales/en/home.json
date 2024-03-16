@@ -1,0 +1,17 @@
+{
+  "hello_there": "Hello there!",
+  "welcome_message": "I'm <strong>{{name}}</strong>",
+  "introduce_myself": "LET ME <span>INTRODUCE</span> MYSELF",
+  "love_programming": "I fell in love with programming and I have at least learnt something, I think… 🤷‍♂️",
+  "connect_with_me": "Feel free to <span>connect</span> with me",
+  "find_me_on": "<span>find me on</span>",
+  "most_fluent_techs": "I'm most fluent with <span>Python, Javascript and Java</span>.",
+  "interest_list_title": "My field of Interest's are building",
+  "interest_list_items": {
+    "0": "<span>Web Applications</span>",
+    "1": "<span>Machine Learning</span>",
+    "2": "<span>Computer Vision</span>"
+  },
+  "extra_knowledge": "I also have some knowledge in <span>React.JS and Flutter</span>.",
+  "hoobies": "I am currently having <span>French</span> classes (I am not very good at it yet) and I love to play video games."
+}

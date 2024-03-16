@@ -1,0 +1,12 @@
+{
+  "name": "Hi Everyone, I am <span>Eduardo Guerra</span> from <span>Portugal</span>.",
+
+  "current_employement": "I am currently working as a Software Developer at a company called <a>{{company_name}}</a> in projects related to <span>Machine Learning and Robotics</span>.",
+
+  "about_activities_title": "Apart from coding, some other activities that I love to do!",
+  "about_activities_items": {
+    "0": "Playing videos games",
+    "1": "Playing and walking with my dog",
+    "2": "Travelling and exploring new places"
+  }
+}

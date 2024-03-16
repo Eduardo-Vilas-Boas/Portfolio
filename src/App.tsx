@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Portfolio">
       <Suspense fallback={<Preloader load={load} />}>
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Navbar />

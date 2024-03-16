@@ -7,7 +7,7 @@ void i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/Portfolio/locales/{{lng}}/{{ns}}.json",
     },
     debug: true,
     fallbackLng: "en",

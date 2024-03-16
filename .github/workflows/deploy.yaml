@@ -29,7 +29,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: portfolio-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-app:latest
 
   deploy:
     name: Deploy
@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Pull Docker image
-        run: docker pull portfolio-app:latest
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-app:latest
 
       - name: Run Docker image
-        run: docker run -d -p 8000:8000 portfolio-app:latest
+        run: docker run -d -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-app:latest

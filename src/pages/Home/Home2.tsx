@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import homeImage from "../../Assets/home.png";
 import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiTwotoneMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -82,9 +82,9 @@ function Home2() {
               />
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
+          <Col md={4} className="myAvtar-col">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={homeImage} className="img-fluid" alt="avatar" />
             </Tilt>
           </Col>
         </Row>

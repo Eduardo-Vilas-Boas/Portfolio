@@ -265,6 +265,7 @@ button:focus {
 
 .home-header {
   padding-top: 80px !important;
+  text-align: start !important;
 }
 
 .home-section {
@@ -278,9 +279,7 @@ button:focus {
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
   color: whitesmoke;
-  text-align: left;
 }
 
 .heading {
@@ -318,9 +317,15 @@ button:focus {
   }
 }
 
+.myAvtar-col {
+  padding-top: 7em !important;
+  border-radius: 50%;
+  text-align: right;
+}
+
 .myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
+  border-radius: 50%;
+  text-align: right;
 }
 
 @media (max-width: 767px) {

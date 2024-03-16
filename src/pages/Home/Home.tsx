@@ -1,8 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap";
+import Tilt from "react-parallax-tilt";
+import { Trans, useTranslation } from "react-i18next";
 import Particle from "../../components/Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { Trans, useTranslation } from "react-i18next";
+import myImg from "../../Assets/my_photo.jpeg";
 
 function Home() {
   const { t } = useTranslation(["home"]);
@@ -33,6 +35,11 @@ function Home() {
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
+            </Col>
+            <Col md={4} className="myAvtar-col">
+              <Tilt>
+                <img src={myImg} className="myAvtar" alt="avatar" />
+              </Tilt>
             </Col>
           </Row>
         </Container>

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 
 import enFlag from "../Assets/en-flag.svg";
@@ -21,13 +21,26 @@ function NavBar() {
 
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [path, setPath] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!expand && path) {
+      navigate(path);
+    }
+  }, [expand]);
+
+  const navigateTo = (path: string) => {
+    setPath(path);
+    updateExpanded(false);
+  };
 
   const getLanguageFlag = (currentLanguage: string) => {
     return currentLanguage === "en"
       ? enFlag
       : i18n.language === "fr"
-      ? frFlag
-      : ptFlag;
+        ? frFlag
+        : ptFlag;
   };
 
   const [currentFlag, setCurrentFlag] = useState(
@@ -74,7 +87,7 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={Link} to="/" onClick={() => navigateTo("/")}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> {t("home")}
               </Nav.Link>
             </Nav.Item>
@@ -82,7 +95,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/about"
-                onClick={() => updateExpanded(false)}
+                onClick={() => navigateTo("/about")}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> {t("about")}
               </Nav.Link>
@@ -92,7 +105,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/resume"
-                onClick={() => updateExpanded(false)}
+                onClick={() => navigateTo("/resume")}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("resume")}
               </Nav.Link>

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 
 import enFlag from "../Assets/en-flag.svg";
@@ -16,13 +16,14 @@ import { CgFileDocument } from "react-icons/cg";
 import { Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-function NavBar() {
+const NavBar: React.FC = () => {
   const { t } = useTranslation(["navbar"]);
 
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const [path, setPath] = useState('');
+  const [path, setPath] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     if (!expand && path) {
@@ -36,11 +37,11 @@ function NavBar() {
   };
 
   const getLanguageFlag = (currentLanguage: string) => {
-    return currentLanguage === "en"
-      ? enFlag
-      : i18n.language === "fr"
-        ? frFlag
-        : ptFlag;
+    return currentLanguage === "pt"
+      ? ptFlag
+      : currentLanguage === "fr"
+      ? frFlag
+      : enFlag;
   };
 
   const [currentFlag, setCurrentFlag] = useState(
@@ -58,9 +59,19 @@ function NavBar() {
   window.addEventListener("scroll", scrollHandler);
 
   const changeLanguage = (lng: string) => {
+    // Change the language and navigate to the corresponding URL
     i18n.changeLanguage(lng);
 
     setCurrentFlag(getLanguageFlag(lng));
+
+    let newLangUrl = lng === "en" ? "" : "/" + lng;
+
+    // Replace the old language with the new one in the pathname
+    let newPathname = location.pathname.replace(/\/(en|pt|fr)/, `/`);
+    newPathname = newLangUrl + newPathname;
+
+    // Navigate to the new URL
+    navigate(newPathname);
   };
 
   return (
@@ -156,6 +167,6 @@ function NavBar() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavBar;

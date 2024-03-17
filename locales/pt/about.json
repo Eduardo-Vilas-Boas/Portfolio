@@ -1,0 +1,12 @@
+{
+  "name": "Bom dia, eu chamo-me <span>Eduardo Guerra</span> e sou de <span>Portugal</span>.",
+
+  "current_employement": "Eu sou software engineer na <a>{{company_name}}</a> e trabalho nas áreas de <span>Machine Learning e Robótica</span>.",
+
+  "about_activities_title": "Para além de programação, tenho mais alguns passatempos:",
+  "about_activities_items": {
+    "0": "Jogar jogos de computador",
+    "1": "Passear o meu cão",
+    "2": "Viajar e conhecer locais novos"
+  }
+}

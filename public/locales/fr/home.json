@@ -1,3 +1,17 @@
 {
-  "hello_there": "Bonjour!"
+  "hello_there": "Bonjour!",
+  "welcome_message": "Je m'appelle <strong>{{name}}</strong>",
+  "introduce_myself": "LAISSEZ MOI ME <span>PRESENTER</span>",
+  "love_programming": "Je suis tombé amoureux de la programmation et j'ai au moins appris quelque chose, je pense… 🤷‍♂️",
+  "connect_with_me": "N'hésitez pas à <span>me contacter</span>",
+  "find_me_on": "<span>trouvez-moi sur</span>",
+  "most_fluent_techs": "Mes meilleurs langages de programmation sont <span>Python, Javascript et Java</span>.",
+  "interest_list_title": "Mes domaines d'intérêt sont",
+  "interest_list_items": {
+    "0": "<span>Web Applications</span>",
+    "1": "<span>Machine Learning</span>",
+    "2": "<span>Computer Vision</span>"
+  },
+  "extra_knowledge": "J'ai également quelques connaissances en <span>React.JS and Flutter</span>.",
+  "hoobies": "J'ai des cours de <span>Français</span> et j'adore jouer aux jeux vidéo."
 }

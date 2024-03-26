@@ -71,7 +71,7 @@ const NavBar: React.FC = () => {
     newPathname = newLangUrl + newPathname;
 
     // Navigate to the new URL
-    navigate(newPathname);
+    navigateTo(newPathname);
   };
 
   return (

@@ -32,8 +32,13 @@ const NavBar: React.FC = () => {
   }, [path, expand]);
 
   const navigateTo = (path: string) => {
-    setPath(path);
-    updateExpanded(false);
+    if (i18n.language === "en") {
+      setPath(path);
+      updateExpanded(false);
+    } else {
+      setPath("/" + i18n.language + path);
+      updateExpanded(false);
+    }
   };
 
   const getLanguageFlag = (currentLanguage: string) => {

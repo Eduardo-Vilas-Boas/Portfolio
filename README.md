@@ -1,5 +1,5 @@
 <h2 align="center">
-  <a href="https://eduardo-vilas-boas.github.io/Portfolio/" target="_blank">Portfolio Website</a>
+  <a href="https://eduardoguerra.tech" target="_blank">Portfolio Website</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./src/Assets/demo.png" />
@@ -7,7 +7,7 @@
 
 ## Built With
 
-My <a href="https://eduardo-vilas-boas.github.io/Portfolio/" target="_blank">personal portfolio</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My <a href="https://eduardoguerra.tech" target="_blank">personal portfolio</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 

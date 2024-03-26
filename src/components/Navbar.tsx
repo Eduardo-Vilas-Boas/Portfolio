@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
     if (!expand && path) {
       navigate(path);
     }
-  }, [expand]);
+  }, [path, expand]);
 
   const navigateTo = (path: string) => {
     setPath(path);
@@ -69,6 +69,7 @@ const NavBar: React.FC = () => {
     // Replace the old language with the new one in the pathname
     let newPathname = location.pathname.replace(/\/(en|pt|fr)/, `/`);
     newPathname = newLangUrl + newPathname;
+    newPathname = newPathname.replace("//", "/");
 
     // Navigate to the new URL
     navigateTo(newPathname);

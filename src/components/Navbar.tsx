@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 
 import enFlag from "../Assets/en-flag.svg";
@@ -21,25 +21,6 @@ const NavBar: React.FC = () => {
 
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const [path, setPath] = useState("");
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (!expand && path) {
-      navigate(path);
-    }
-  }, [path, expand]);
-
-  const navigateTo = (path: string) => {
-    if (i18n.language === "en") {
-      setPath(path);
-      updateExpanded(false);
-    } else {
-      setPath("/" + i18n.language + path);
-      updateExpanded(false);
-    }
-  };
 
   const getLanguageFlag = (currentLanguage: string) => {
     return currentLanguage === "pt"
@@ -69,15 +50,7 @@ const NavBar: React.FC = () => {
 
     setCurrentFlag(getLanguageFlag(lng));
 
-    let newLangUrl = lng === "en" ? "" : "/" + lng;
-
-    // Replace the old language with the new one in the pathname
-    let newPathname = location.pathname.replace(/\/(en|pt|fr)/, `/`);
-    newPathname = newLangUrl + newPathname;
-    newPathname = newPathname.replace("//", "/");
-
-    // Navigate to the new URL
-    navigateTo(newPathname);
+    localStorage.setItem("lng", lng);
   };
 
   return (
@@ -104,26 +77,18 @@ const NavBar: React.FC = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => navigateTo("/")}>
+              <Nav.Link as={Link} to="/">
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> {t("home")}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => navigateTo("/about")}
-              >
+              <Nav.Link as={Link} to="/about">
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> {t("about")}
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => navigateTo("/resume")}
-              >
+              <Nav.Link as={Link} to="/resume">
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("resume")}
               </Nav.Link>
             </Nav.Item>

@@ -18,40 +18,8 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import i18n from "./i18n";
-
-interface LanguageHandlerProps {
-  language?: string;
-  updateLoad: (value: boolean) => void;
-}
-
-const LanguageHandler: React.FC<LanguageHandlerProps> = ({
-  language,
-  updateLoad,
-}) => {
-  const { lang } = useParams();
-
-  useEffect(() => {
-    // Set the language based on the URL
-    if (language !== undefined && language != i18n.language) {
-      i18n.changeLanguage(language);
-    }
-
-    const timer = setTimeout(() => {
-      updateLoad(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, [lang]);
-
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} key={lang} />
-      <Route path="/about" element={<About />} key={lang} />
-      <Route path="/resume" element={<Resume />} key={lang} />
-      <Route path="*" element={<Navigate to="/" />} key={lang} />
-    </Routes>
-  );
-};
+import { c } from "vite/dist/node/types.d-AKzkD8vd";
+import i18next from "i18next";
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -61,16 +29,26 @@ function App() {
       updateLoad(false);
     }, 1200);
 
+    const currentLanguage = localStorage.getItem("lng");
+
+    if (currentLanguage === null || currentLanguage === undefined) {
+      i18next.changeLanguage("en");
+
+      localStorage.setItem("lng", "en");
+    } else if (currentLanguage !== i18next.language) {
+      i18next.changeLanguage(currentLanguage);
+    }
+
     return () => clearTimeout(timer);
   }, []);
 
-  function RedirectToPath() {
+  function RedirectEnToRoot() {
     const navigate = useNavigate();
-    const { "*": path } = useParams();
+    const { splat } = useParams();
 
     useEffect(() => {
-      navigate(`/${path}`, { replace: true });
-    }, [navigate, path]);
+      navigate(`/${splat}`);
+    }, [navigate, splat]);
 
     return null;
   }
@@ -82,25 +60,10 @@ function App() {
           <Navbar />
           <ScrollToTop />
           <Routes>
-            <Route path="/en/*" element={<RedirectToPath />} />
-            <Route
-              path="/fr/*"
-              element={
-                <LanguageHandler language={"fr"} updateLoad={updateLoad} />
-              }
-            />
-            <Route
-              path="/pt/*"
-              element={
-                <LanguageHandler language={"pt"} updateLoad={updateLoad} />
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <LanguageHandler language={"en"} updateLoad={updateLoad} />
-              }
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           <Footer />
         </div>

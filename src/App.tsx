@@ -6,19 +6,15 @@ import About from "./pages/About/About";
 import Footer from "./components/Footer";
 import Resume from "./pages/Resume/ResumeNew";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   Navigate,
-  useParams,
-  useNavigate,
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import i18n from "./i18n";
-import { c } from "vite/dist/node/types.d-AKzkD8vd";
 import i18next from "i18next";
 
 function App() {
@@ -41,17 +37,6 @@ function App() {
 
     return () => clearTimeout(timer);
   }, []);
-
-  function RedirectEnToRoot() {
-    const navigate = useNavigate();
-    const { splat } = useParams();
-
-    useEffect(() => {
-      navigate(`/${splat}`);
-    }, [navigate, splat]);
-
-    return null;
-  }
 
   return (
     <Router basename="/">

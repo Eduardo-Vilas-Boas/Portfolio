@@ -9,7 +9,7 @@ void i18n
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
-    debug: true,
+    debug: false,
     fallbackLng: "en",
     supportedLngs: ["en", "fr", "pt"],
     interpolation: {

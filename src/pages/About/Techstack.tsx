@@ -1,52 +1,27 @@
 import { Col, Row } from "react-bootstrap";
-import { CgCPlusPlus } from "react-icons/cg";
-import {
-  DiJavascript1,
-  DiReact,
-  DiPython,
-  DiGit,
-  DiJava,
-  DiHtml5,
-} from "react-icons/di";
-import {
-  SiPytorch,
-  SiPostgresql,
-  SiFastapi,
-  SiFlutter,
-  SiFlask,
-  SiPytest,
-  SiOpencv,
-  SiDocker,
-} from "react-icons/si";
 
 function Techstack() {
   const tech_list = [
-    ["Python", <DiPython />],
-    ["Pytest", <SiPytest />],
-    ["Pytorch", <SiPytorch />],
-    ["Opencv", <SiOpencv />],
-    ["Fastapi", <SiFastapi />],
-    ["Flask", <SiFlask />],
-    ["Git", <DiGit />],
-    ["Docker", <SiDocker />],
-    ["Postgresql", <SiPostgresql />],
-    ["Javascript", <DiJavascript1 />],
-    ["React", <DiReact />],
-    ["HTML5", <DiHtml5 />],
-    ["Flutter", <SiFlutter />],
-    ["Java", <DiJava />],
+    "Python",
+    "PyTorch",
+    "ROS 2",
+    "LangGraph",
+    "SQL",
+    "OpenCV",
+    "FastAPI",
+    "Flask",
+    "Java",
+    "C++",
+    "React.js",
   ];
 
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {tech_list.map((tech) => {
-        return (
-          <Col key={tech[0].toString()} xs={4} md={2} className="tech-icons">
-            <p style={{ fontSize: "0.4em" }}>{tech[0]}</p>
-            {tech[1]}
-          </Col>
-        );
-      })}
+      {tech_list.map((tech) => (
+        <Col key={tech} xs={4} md={2} className="tech-icons">
+          <p style={{ fontSize: "0.75em", fontWeight: 500 }}>{tech}</p>
+        </Col>
+      ))}
     </Row>
   );
 }

@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { AiFillProject } from "react-icons/ai";
 
 import enFlag from "../Assets/en-flag.svg";
 import frFlag from "../Assets/fr-flag.svg";
@@ -87,6 +88,11 @@ const NavBar: React.FC = () => {
               </Nav.Link>
             </Nav.Item>
 
+            <Nav.Item>
+              <Nav.Link as={Link} to="/projects">
+                <AiFillProject style={{ marginBottom: "2px" }} /> {t("projects")}
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/resume">
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("resume")}

@@ -5,13 +5,13 @@
   "love_programming": "I fell in love with programming and I have at least learnt something, I think… 🤷‍♂️",
   "connect_with_me": "Feel free to <span>connect</span> with me",
   "find_me_on": "<span>find me on</span>",
-  "most_fluent_techs": "I'm most fluent with <span>Python, Javascript and Java</span>.",
-  "interest_list_title": "My field of Interest's are building",
+  "most_fluent_techs": "I'm most fluent with <span>Python, PyTorch and C++</span>.",
+  "interest_list_title": "My fields of interest are",
   "interest_list_items": {
-    "0": "<span>Web Applications</span>",
-    "1": "<span>Machine Learning</span>",
-    "2": "<span>Computer Vision</span>"
+    "0": "<span>Machine Learning & Computer Vision</span>",
+    "1": "<span>Robotics & ROS 2</span>",
+    "2": "<span>Multi-Agent AI Systems</span>"
   },
-  "extra_knowledge": "I also have some knowledge in <span>React.JS and Flutter</span>.",
-  "hoobies": "I am currently having <span>French</span> classes and I love to play video games."
+  "extra_knowledge": "I also have experience with <span>Docker, Kubernetes and Google Cloud</span>.",
+  "hoobies": "I love playing video games, walking my dog, and exploring new places."
 }

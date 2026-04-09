@@ -1,7 +1,7 @@
 {
   "name": "Bom dia, eu chamo-me <span>Eduardo Guerra</span> e sou de <span>Portugal</span>.",
 
-  "current_employement": "Eu sou software engineer na <a>{{company_name}}</a> e trabalho nas áreas de <span>Machine Learning e Robótica</span>.",
+  "current_employement": "Atualmente trabalho como <span>Machine Learning Engineer</span> na <a>{{company_name}}</a>, onde treino e implemento modelos PyTorch, desenvolvo workflows multi-agente com LangGraph, e integro ROS 2, Google Cloud e Kubernetes para entregar soluções de ML escaláveis.",
 
   "about_activities_title": "Para além de programação, tenho mais alguns passatempos:",
   "about_activities_items": {

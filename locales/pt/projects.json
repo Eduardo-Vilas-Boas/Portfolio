@@ -6,5 +6,6 @@
   "blog_button": "Blog",
   "demo_button": "Demo",
   "omnisight_description": "Sistema de detecção de anomalias em vídeo para ambientes industriais. Combina um backbone VideoMAE pré-treinado com Multiple Instance Learning (MIL), treinado no conjunto de dados IPAD. Construído com PyTorch Lightning, FastAPI, MLflow, Hydra e Docker — projetado para identificar eventos anormais a partir de câmeras sem exigir anotações por frame.",
-  "portfolio_description": "Site de portfólio pessoal construído com React, TypeScript e Vite. Possui suporte multilíngue em inglês, português e francês via React-i18next, Bootstrap 5 para estilização e fundo animado de partículas. Publicado no GitHub Pages via HashRouter."
+  "portfolio_description": "Site de portfólio pessoal construído com React, TypeScript e Vite. Possui suporte multilíngue em inglês, português e francês via React-i18next, Bootstrap 5 para estilização e fundo animado de partículas. Publicado no GitHub Pages via HashRouter.",
+  "productinquiry_description": "Assistente de consulta de produtos com IA que permite aos usuários perguntar sobre dados da empresa — estruturados, não estruturados ou em tempo real. Construído com RAG e cache de respostas para resultados rápidos e precisos, com otimização automática de prompts via DSPy. Interface via Streamlit."
 }

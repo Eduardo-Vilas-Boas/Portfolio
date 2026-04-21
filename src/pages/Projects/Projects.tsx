@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../../components/Particle";
 import omnisight from "../../Assets/Projects/omnisight.png";
 import portfolio from "../../Assets/Projects/portfolio.png";
+import productinquiry from "../../Assets/Projects/productinquiry.png";
 
 function Projects() {
   const { t } = useTranslation("projects");
@@ -36,6 +37,16 @@ function Projects() {
               title="Portfolio"
               description={t("portfolio_description")}
               ghLink="https://github.com/Eduardo-Vilas-Boas/Portfolio"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={productinquiry}
+              isBlog={false}
+              title="Product Inquiry"
+              description={t("productinquiry_description")}
+              ghLink="https://github.com/Eduardo-Vilas-Boas/ProductInquiry"
             />
           </Col>
         </Row>
